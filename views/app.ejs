@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trending Coins</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Trending Coins</h1>
+
+      <table class="coin-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% trendingCoins.forEach(coin => { %>
+          <tr>
+            <td><%= coin.item.name %></td>
+            <td><%= coin.item.symbol %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <form action="/refresh" method="POST">
+        <button type="submit" class="refresh-button">Refresh</button>
+      </form>
+    </div>
+  </body>
+</html>
